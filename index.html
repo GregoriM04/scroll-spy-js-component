@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FavIcon -->
+
+    <!-- Fonts - Roboto & Source code pro-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>JavaScript's Functions</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Functions in <span>JavaScript</span></h1>
+    </header>
+    <main class="main">
+      <div class="container">
+        <aside class="section-titles">
+          <div class="links" id="links">
+            <a href="#what-are-js-functions">What are JS fucntions?</a>
+            <a href="#types-of-functions">Types of functions</a>
+            <a href="#scope-and-stack">Scope and Stack</a>
+            <a href="#nested-functions">Nested Functions</a>
+            <a href="#closures">Closures</a>
+          </div>
+        </aside>
+        <section class="sections">
+          <div class="section">
+            <h2 class="subtitle" id="what-are-js-functions">
+              What are JS Functions?
+            </h2>
+            <div class="text-container">
+              <p>
+                Functions are a fundamental aspect of JavaScript, a programming
+                language. In JavaScript, functions are structured blocks of code
+                specifically designed to carry out a particular task or set of
+                tasks. When a function is called upon or 'invoked', it then
+                executes the task it was designed for.
+              </p>
+              <p>
+                The way to define a function in JavaScript is by using the
+                'function' keyword. This is then followed by a unique name given
+                to the function. The name is followed by a set of parentheses
+                (). The rules for naming functions are similar to the rules for
+                naming variables in that function names can contain letters,
+                digits, underscores, and dollar signs.
+              </p>
+              <p>
+                Inside the parentheses, parameter names can be included and
+                these are separated by commas for clarity (parameter1,
+                parameter2, etc.). Following the parentheses, the specific code
+                that the function is designed to execute is placed inside curly
+                brackets: {}.
+              </p>
+              <p>
+                For instance, let's consider a simple JavaScript function whose
+                task is to add two numbers together. It could be defined like
+                this:
+                <span class="span-code-style"
+                  >function addNumbers(a, b) { return a + b; }</span
+                >. To invoke this function, you would call it with two numbers
+                as arguments, like so:
+                <span class="span-code-style">addNumbers(3, 4)</span>. The
+                function would then perform its task and return the result of
+                adding the two numbers together.
+              </p>
+              <p>
+                In JavaScript, functions can also be assigned to variables. This
+                is known as a function expression. A function expression does
+                not necessarily need to be given a name, it can be defined as an
+                anonymous function. For instance,
+                <span class="span-code-style"
+                  >let x = function (a, b) {return a * b};</span
+                >
+                is an anonymous function that multiplies two numbers. To call
+                this function, you would use the variable name, like so:
+                <span class="span-code-style">x(4, 5)</span>. This will return
+                the result of 4 multiplied by 5.
+              </p>
+              <p>
+                Furthermore, JavaScript introduces an interesting concept known
+                as the callback function. In simple terms, a callback function
+                is a function that is passed into another function as an
+                argument. The callback function is then invoked inside the outer
+                function. This concept is a key component of asynchronous
+                programming in JavaScript as it allows the execution of code to
+                continue without having to wait for the function that was passed
+                as a callback to complete.
+              </p>
+              <p>
+                Last but not least, JavaScript also supports a more recent
+                feature known as arrow functions, introduced in ES6. Arrow
+                functions offer a more concise syntax to write function
+                expressions. They are particularly useful for non-method
+                functions and it's important to note that they cannot be used as
+                constructors.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <h2 class="subtitle" id="types-of-functions">Types of functions</h2>
+            <div class="text-container">
+              <p>
+                <b>Named Functions:</b> These are the standard function that we
+                define using the
+                <span class="span-code-style">functions</span> keyword followed
+                by a name. The name is followed by parentheses, which can
+                include parameters separated by commas. The code to be executed
+                by the function is placed inside curly brackets {}. An example
+                of a named function is:
+                <span class="span-code-style">
+                  function addNumbers(a, b) { return a + b; }</span
+                >. This function is called with two numbers as arguments and it
+                returns the sum of these two numbers.
+              </p>
+              <p>
+                <b>Function Expressions:</b> These are functions that are
+                assigned to variables. The function itself can be anonymous,
+                which means it does not necessarily need a name. The function is
+                defined and then assigned to a variable. When calling this type
+                of function, the variable's name is used. For instance,
+                <span class="span-code-style">
+                  let x = function (a, b) { return a * b };</span
+                >
+                is an example of an anonymous function expression that
+                multiplies two numbers. To use this function, you would call it
+                with the variable name and two numbers as arguments like this:
+                <span class="span-code-style">x(4, 5)</span>. This will return
+                the result of 4 multiplied by 5.
+              </p>
+              <p>
+                <b>Callback Functions:</b> These are functions that are passed
+                into another function as an argument and then invoked inside the
+                outer function. This is a fundamental aspect of asynchronous
+                programming in JavaScript, which allows the execution of the
+                code to continue without waiting for the function that was
+                passed as a callback to complete. Callback functions can help to
+                manage and control the flow of the program, especially when
+                dealing with asynchronous operations.
+              </p>
+              <p>
+                <b>Arrow Functions:</b> Arrow functions were introduced in ES6
+                as a new way to write shorter function syntax. They are
+                particularly useful when a function is placed into a variable -
+                making it a function expression. Arrow functions are anonymous
+                and change the way
+                <span class="span-code-style"> this</span> binds in functions.
+                They are best suited for non-method functions, and they cannot
+                be used as constructors. An example of an arrow function is:
+                <span class="span-code-style">const x = (a, b) => a * b;</span>.
+                This function multiplies two numbers and returns the result.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <h2 class="subtitle" id="scope-and-stack">Scope and Stack</h2>
+            <div class="text-container">
+              <p>
+                In JavaScript, each function creates a new scope. Scope
+                determines the visibility or accessibility of variables,
+                functions, and objects in some particular part of your code
+                during runtime. In other words, it defines the portion of the
+                code where a variable or a function can be accessed.
+              </p>
+              <p>Let's consider a simple example:</p>
+              <pre>
+                            <code>
+                                function exampleFunction() {
+                                    let x = 10;
+                                    if (true) {
+                                      let y = 20;
+                                      console.log(x + y);  // This will output 30
+                                    }
+                                    console.log(y);  // This will output 'undefined'
+                                  }
+                            </code>
+                        </pre>
+              <p>
+                In this example, <span class="span-code-style">x</span> is
+                accessible within the entire function
+                <span class="span-code-style">exampleFunction()</span>, but
+                <span class="span-code-style">y</span> is only accessible within
+                the <span class="span-code-style">if</span> block.
+              </p>
+              <p>
+                The JavaScript engine executes the function code from top to
+                bottom, and as it executes, it creates a execution context. For
+                each function call, a new execution context is stacked on top of
+                the previous one, creating a call stack. When a function
+                finishes execution, its execution context is popped off from the
+                stack, and control reaches to the context below in the current
+                stack.
+              </p>
+              <p>Consider the following example:</p>
+              <pre>
+                            <code>
+                                function firstFunction() {
+                                    console.log('First');
+                                    secondFunction();
+                                    console.log('Back in first function');
+                                  }
+                                  
+                                  function secondFunction() {
+                                    console.log('Second');
+                                  }
+                                  
+                                  firstFunction();
+                            </code>
+                        </pre>
+              <p>
+                In this example, calling
+                <span class="span-code-style">firstFunction()</span> creates a
+                first execution context which is put on the call stack. When
+                <span class="span-code-style">secondFunction()</span> is called
+                inside <span class="span-code-style">firstFunction()</span>, a
+                second context is created and put on top of the first one in the
+                call stack. When
+                <span class="span-code-style">secondFunction()</span> finishes
+                executing, its context is popped from the stack, and execution
+                continues in the
+                <span class="span-code-style">firstFunction()</span> context.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <h2 class="subtitle" id="nested-functions">Nested Functions</h2>
+            <div class="text-container">
+              <p>
+                Nested functions in JavaScript are functions that are defined
+                inside other functions. They are also known as inner functions.
+                The outer function that encloses the inner function is called
+                the parent function. The inner function can only be accessed
+                from statements in the outer function.
+              </p>
+              <p>
+                Nested functions are an important feature of JavaScript because
+                they allow for information hiding and encapsulation, which can
+                lead to better-organized and more maintainable code. Inner
+                functions have access to the variables and parameters of the
+                outer (parent) function. This is known as lexical scoping.
+              </p>
+              <p>
+                Here is a simple example of a nested function in JavaScript:
+              </p>
+              <pre>
+                            <code>
+                                function outerFunction(a, b) {
+                                    function innerFunction(c) {
+                                      return a * b * c;
+                                    }
+                                    return innerFunction;
+                                  }
+                                  
+                                  let result = outerFunction(2, 3)(4);
+                            </code>
+                        </pre>
+              <p>
+                In this example,
+                <span class="span-code-style">innerFunction</span> is nested
+                within <span class="span-code-style">outerFunction</span>.
+                <span class="span-code-style">innerFunction</span> is able to
+                access the parameters <span class="span-code-style">a</span> and
+                <span class="span-code-style">b</span> from its parent function,
+                <span class="span-code-style">outerFunction</span>. The
+                <span class="span-code-style">outerFunction</span> is then
+                called with two arguments, and it returns the
+                <span class="span-code-style">innerFunction</span>. The returned
+                <span class="span-code-style">innerFunction</span> is
+                immediately called with the argument
+                <span class="span-code-style">4</span>, and it returns the
+                result of the multiplication of
+                <span class="span-code-style">2</span>,
+                <span class="span-code-style">3</span>, and
+                <span class="span-code-style">4</span>.
+              </p>
+              <p>
+                Remember that functions in JavaScript are first-class objects.
+                This means that they can be passed as arguments to other
+                functions, returned as values from other functions, assigned to
+                variables, or stored in data structures.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <h2 class="subtitle" id="closures">Closures</h2>
+            <div class="text-container">
+              <p>
+                n JavaScript, a closure is a function that has access to its own
+                scope, the outer function’s scope, and the global scope, as well
+                as access to its own arguments, the outer function’s arguments,
+                and the global arguments. A closure gives you access to an outer
+                function’s scope from an inner function.
+              </p>
+              <p>
+                In JavaScript, closures are created every time a function is
+                created, at function creation time. To use a closure, define a
+                function inside another function and expose it. To expose a
+                function, return it or pass it to another function.
+              </p>
+              <p>Here is a simple example:</p>
+              <pre>
+                            <code>
+                                function outerFunction(outerVariable) {
+                                    return function innerFunction(innerVariable) {
+                                      console.log('outerVariable:', outerVariable);
+                                      console.log('innerVariable:', innerVariable);
+                                    }
+                                  }
+                                  
+                                  const newFunction = outerFunction('outside');
+                                  newFunction('inside');
+                            </code>
+                        </pre>
+              <p>
+                In this example,
+                <span class="span-code-style">outerFunction</span> is creating
+                and returning the
+                <span class="span-code-style">innerFunction</span>. The
+                <span class="span-code-style">innerFunction</span> is a closure
+                that is closed over
+                <span class="span-code-style">outerVariable</span>. This closure
+                is a function (<span class="span-code-style">innerFunction</span
+                >) bundled together with its lexical environment. The lexical
+                environment consists of any local variables that were in-scope
+                at the time the closure was created. In this case,
+                <span class="span-code-style">outerVariable</span> is part of
+                the <span class="span-code-style">newFunction</span> closure.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
